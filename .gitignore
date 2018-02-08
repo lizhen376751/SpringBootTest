@@ -31,3 +31,11 @@ Thumbs.db
 .idea
 allDays.iml
 .project
+
+/out/*
+/target/*
+SpringBootTest.iml
+src/test/
+
+.project
+/META-INF
