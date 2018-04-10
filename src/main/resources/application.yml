@@ -1,3 +1,9 @@
-server:
-  port: 8080
-  context-path: /lizhen123
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:8888/eureka/
+  server:
+    port: 8766
+  spring:
+    application:
+      name: service-order-restTemplate
