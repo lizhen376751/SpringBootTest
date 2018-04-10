@@ -4,8 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -20,15 +22,14 @@ import org.springframework.web.client.RestTemplate;
  * EnableJpaRepositories JPa注解
  * EnableAsync 异步调用注解
  * EnableScheduling 定时任务注解
+ * EnableHystrix注解开启Hystrix
+ * EnableDiscoveryClient向服务中心注册
  */
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.lizhen.sbtest.feign"})
-@EnableJpaRepositories("com.lizhen.sbtest.dao")
-@EntityScan("com.lizhen.sbtest.entry")
-@EnableAutoConfiguration
-@EnableAsync
-@EnableScheduling
 @EnableEurekaClient
+@EnableHystrix
+@EnableDiscoveryClient
 public class App {
     /**
      * 整个项目最好只有一个main方法不然访问不到，因为这样会有多个入口
@@ -40,6 +41,10 @@ public class App {
         SpringApplication.run(App.class, args);
     }
 
+    /**
+     * 并且向程序的ioc注入一个bean:restTemplate;
+     * 并通过@LoadBalanced注解表明这个restRemplate开启负载均衡的功能
+     */
     @Bean
     @LoadBalanced
     RestTemplate restTemplate() {
