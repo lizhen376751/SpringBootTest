@@ -127,7 +127,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <!--当运行jar时提示没有主类信息此时,你需要制定程序的运行入口,也就是main方法-->
-                    <mainClass>com.lizhen.sbtest.app.App</mainClass>
+                    <mainClass>com.lizhen.sbtest.App</mainClass>
                 </configuration>
                 <executions>
                     <execution>

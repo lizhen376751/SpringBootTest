@@ -1,4 +1,4 @@
-package com.lizhen.sbtest.feign;
+package com.lizhen.sbtest.ribbon;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,13 +14,10 @@ public class RestTemplateController {
     @Autowired
     private RestTemplateService restTemplateService;
 
-    @RequestMapping("/getOrderUserAll")
-    public List<String> getOrderUserAll() {
+    @RequestMapping("/get8762")
+    public String getOrderUserAll() {
         System.out.println("订单服务开始调用会员服务");
         return restTemplateService.getName();
     }
-    @RequestMapping("/getOrderServiceApi")
-    public String getOrderServiceApi(){
-        return "this is feign 服务工程";
-    }
+
 }
