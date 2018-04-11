@@ -14,10 +14,25 @@ public class RestTemplateController {
     @Autowired
     private RestTemplateService restTemplateService;
 
-    @RequestMapping("/get8762")
-    public String getOrderUserAll() {
+    //调用8761项目的接口
+    @RequestMapping("/get8762Test001")
+    public String get8762Test001() {
         System.out.println("订单服务开始调用会员服务");
-        return restTemplateService.getName();
+        return restTemplateService.get8762Test001();
     }
+    //调用8763项目接口
+    @RequestMapping("/get8762Test002")
+    public String get8762Test002() {
+        System.out.println("订单服务开始调用会员服务");
+        return restTemplateService.get8762Test002();
+    }
+
+    //暴露本项目接口
+    @RequestMapping("/get8762Test003")
+    public String get8763Name() {
+        System.out.println("订单服务开始调用会员服务");
+        return "I am 8762 ,you like me！";
+    }
+
 
 }
