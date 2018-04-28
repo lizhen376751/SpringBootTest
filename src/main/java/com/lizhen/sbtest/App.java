@@ -21,9 +21,9 @@ import org.springframework.web.client.RestTemplate;
  * EnableDiscoveryClient向服务中心注册
  */
 @SpringBootApplication
-@EnableEurekaClient
-@EnableHystrix
-@EnableDiscoveryClient
+//@EnableEurekaClient
+//@EnableHystrix
+//@EnableDiscoveryClient
 public class App {
     /**
      * 整个项目最好只有一个main方法不然访问不到，因为这样会有多个入口

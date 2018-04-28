@@ -1,4 +1,4 @@
-package com.lizhen.sbtest.test002dao;
+package com.lizhen.sbtest.test002.dao;
 
 import com.lizhen.sbtest.entry.User;
 import org.apache.ibatis.annotations.Insert;
@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Select;
 
 
 
-public interface UserMapperTest02 {
+public interface UserMapperTest002 {
 	@Select("SELECT * FROM USERS WHERE NAME = #{name}")
 	User findByName(@Param("name") String name);
 
