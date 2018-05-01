@@ -39,3 +39,4 @@ src/test/
 
 .project
 /META-INF
+/transaction-logs/
