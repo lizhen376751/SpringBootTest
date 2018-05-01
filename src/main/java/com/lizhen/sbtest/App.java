@@ -1,7 +1,10 @@
 package com.lizhen.sbtest;
 
+import com.lizhen.sbtest.datasource.DBConfig1;
+import com.lizhen.sbtest.datasource.DBConfig2;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -20,6 +23,8 @@ import org.springframework.web.client.RestTemplate;
  * EnableHystrix注解开启Hystrix
  * EnableDiscoveryClient向服务中心注册
  */
+//启动的时候读取配置文件
+@EnableConfigurationProperties(value = { DBConfig1.class, DBConfig2.class })
 @SpringBootApplication
 //@EnableEurekaClient
 //@EnableHystrix

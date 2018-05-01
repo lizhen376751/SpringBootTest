@@ -17,7 +17,6 @@ public class UserServiceTest002 {
     public Integer insert(String name, Integer age) {
         System.out.println("2创建用户的语句");
         int insert2 = userMapperTest002.insert(name, age);
-        int i = 1 / 0;
         System.out.println("插入数据成功！！！！");
         return insert2;
     }
